@@ -24,14 +24,18 @@ Executing multiple_processes.py script.
 Read the output. Read the code. 
 Try to figure out what's going on. 
 
-1. What libraries did we import?
-1. Where do we set the task_duration?
-1. How many functions are defined? 
-1. What are the function names? 
+1. What libraries did we import? # sqlite3, time, multiprocessing, os, datetime, platform, sys
+1. Where do we set the task_duration? # on line 34 task_duration = 0 # TODO: increase this to 3 and see what happens
+1. How many functions are defined? # 7
+1. What are the function names? # create_table, drop_table, insert_pet, process_one, process_two, process_three, recreate_database
 1. In general, what does each function do? 
-1. Where does the execution begin?
-1. How many processes do we start?
-1. How many records does each process insert?
+# create_table creates the initial table called pets
+# drop_table - I am not sure what this particular function does
+# insert_pet inserts new rows of data into the table
+# process_one, process_two, and process_three contain 2 data records to insert into the table utilizing the insert_pet format
+1. Where does the execution begin? # line 132
+1. How many processes do we start? # 3
+1. How many records does each process insert? # 2
 
 In this first run, we start 3 processes, 
 each inserting 2 records into a shared database 
@@ -95,7 +99,7 @@ Do a web search to find helpful videos on anything that seems confusing.
 Python has pretty helpful error messages. 
 When you get an error, read them carefully. 
 
-- What error do you get?
+- What error do you get? # sqlite3.OperationalError: database is locked
 - Can you tell what line it was executing when it failed?
 
 
@@ -103,7 +107,7 @@ When you get an error, read them carefully.
 
 Do a web search on the sqlite3 'database is locked' error.
 
-- What do you learn?
+- What do you learn? # When a database is locked error happens, then the tables can no longer be updated with new data.  It happens when more than one operation is being utilized in the same connection.  An example that I found is the following, "Assume a scenario, when you attempt to run a DROP TABLE statement meanwhile a different thread is trying to read from the same table and that also on the same database connection. Then, the table would be deleted and therefore, the other thread will be unable to read from it." (TekRADIUS)
 - Once a process fails, it crashes the main process and everything stops. 
 
 ## Deadlock

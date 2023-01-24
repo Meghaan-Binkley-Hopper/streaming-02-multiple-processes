@@ -71,7 +71,7 @@ def get_header(fn):
 
  The active environment should be either conda OR pip (one should be None):
 
-     Active conda env is: {os.environ.get('CONDA_DEFAULT_ENV') }
+     Active conda env is: {os.environ.get('CONDA_DEFAULT_ENV') } #Make sure to execute conda init first
      Active pip env is:   {os.environ.get('PIP_DEFAULT_ENV')}
  
  The path to the active virtual environment is:
